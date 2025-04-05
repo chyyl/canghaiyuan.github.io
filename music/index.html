@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Library</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- 自定义样式 -->
+    <style>
+        :root {
+            --primary-color: #3f51b5;
+            --bg-color: #ffffff;
+            --text-color: #212529;
+        }
+
+        body.dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f8f9fa;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            background-color: var(--primary-color)!important;
+        }
+
+        .audio-player {
+            background: rgba(0,0,0,0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .progress-bar-container {
+            height: 5px;
+            background: #dee2e6;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .album-art {
+            border-radius: 15px;
+            max-width: 300px;
+            margin: 1rem auto;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">My Music Library</a>
+            
+            <div class="d-flex">
+                <button class="btn btn-outline-light" id="themeToggle">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        
+<div class="container">
+    <h1 class="mt-5">My Music Library</h1>
+    
+    <div class="row mt-4">
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Black Magic (Tim Croft Remix)-Jonasu.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/Black Magic (Tim Croft Remix)-Jonasu.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Shots (Broiler Remix) - Imagine Dragons,Broiler.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/Shots (Broiler Remix) - Imagine Dragons,Broiler.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Star Unkind (Lanfranchi & Farina Remix) - 2Someone,Lanfranchi,Farina.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/Star Unkind (Lanfranchi & Farina Remix) - 2Someone,Lanfranchi,Farina.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sweet Dreams</h5>
+                    <p class="text-muted">Breathe Carolina</p>
+                    <a href="songs/Sweet Dreams - Breathe Carolina,Dropgun,Kaleena Zanders.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">kuwo</h5>
+                    <p class="text-muted">kuwo</p>
+                    <a href="songs/Take Me Hand-DAISHI DANCE,Cécile Corbel.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ò»ÉúÓÐÄã</h5>
+                    <p class="text-muted">Ë®Ä¾Äê»ª</p>
+                    <a href="songs/一生有你-水木年华.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Мокрые губы (Relanium, Prezzplay, Deen West Radio Remix) - Lx24,Relanium,Dj Prezzplay,Deen West.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/Мокрые губы (Relanium, Prezzplay, Deen West Radio Remix) - Lx24,Relanium,Dj Prezzplay,Deen West.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">一路生花(DJ沈念版)-温奕心.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/一路生花(DJ沈念版)-温奕心.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">一路生花-BeatBrothers.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/一路生花-BeatBrothers.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">三拜红尘凉-尹昔眠.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/三拜红尘凉-尹昔眠.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">凤凰花开的路口</h5>
+                    <p class="text-muted">林志炫</p>
+                    <a href="songs/凤凰花开的路口 - 林志炫.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">初恋</h5>
+                    <p class="text-muted">戴佩妮</p>
+                    <a href="songs/初恋(Live) - 戴佩妮,摩登兄弟刘宇宁.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">半山听雨-洞箫</h5>
+                    <p class="text-muted">孤箫</p>
+                    <a href="songs/孤箫 - 半山听雨-洞箫.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">可能</h5>
+                    <p class="text-muted">程响</p>
+                    <a href="songs/可能 - 程响.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">在人间</h5>
+                    <p class="text-muted">王建房</p>
+                    <a href="songs/王建房 - 在人间.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">在你的身边 - 盛哲.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/在你的身边 - 盛哲.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">天下的乌鸦一般黑</h5>
+                    <p class="text-muted">小炎同学</p>
+                    <a href="songs/天下的乌鸦一般黑 - 小炎同学.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">奢香夫人-凤凰传奇.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/奢香夫人-凤凰传奇.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">如果我们在余生相遇</h5>
+                    <p class="text-muted">RE-D/是二哈ya</p>
+                    <a href="songs/如果我们在余生相遇·双鱼座 - 是二哈ya,RE-D.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">小城夏天-LBI利比.96.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/小城夏天-LBI利比.96.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">小星星-汪苏泷.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/小星星-汪苏泷.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">小美满</h5>
+                    <p class="text-muted">周深</p>
+                    <a href="songs/小美满 - 周深.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">就让这大雨全都落下-容祖儿.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/就让这大雨全都落下-容祖儿.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">我好像在哪见过你 - 薛之谦.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/我好像在哪见过你 - 薛之谦.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">我曾遇到一束光</h5>
+                    <p class="text-muted">叶斯淳</p>
+                    <a href="songs/我曾遇到一束光 - 叶斯淳.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">我的纸飞机</h5>
+                    <p class="text-muted">GooGoo/王之睿</p>
+                    <a href="songs/我的纸飞机 - GooGoo,王之睿.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">我走后-小咪.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/我走后-小咪.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">指纹-杜宣达.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/指纹-杜宣达.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">故梦(琵琶版)</h5>
+                    <p class="text-muted">千年破晓</p>
+                    <a href="songs/千年破晓 - 故梦(琵琶版).html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">春庭雪</h5>
+                    <p class="text-muted">邓寓君(等什么君)</p>
+                    <a href="songs/春庭雪 - 邓寓君(等什么君).html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">暮色回响</h5>
+                    <p class="text-muted">吉星出租</p>
+                    <a href="songs/暮色回响 - 吉星出租.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">最后一页 - 江语晨.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/最后一页 - 江语晨.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">有点甜</h5>
+                    <p class="text-muted">汪苏泷/BY2</p>
+                    <a href="songs/有点甜 - 汪苏泷,BY2.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">未必 - 言瑾羽.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/未必 - 言瑾羽.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">梁山伯与茱丽叶 - yihuik苡慧,小包Zerinn.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/梁山伯与茱丽叶 - yihuik苡慧,小包Zerinn.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">每一句都很甜</h5>
+                    <p class="text-muted">李思雨</p>
+                    <a href="songs/每一句都很甜-新乐尘符.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">离别开出花 - 就是南方凯（项学凯）.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/离别开出花 - 就是南方凯（项学凯）.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">童话镇</h5>
+                    <p class="text-muted">陈一发儿</p>
+                    <a href="songs/陈一发儿 - 童话镇.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">粉雪、フワリ。-Lily.μ.128.mp3</h5>
+                    <p class="text-muted">Lily.¦Ì</p>
+                    <a href="songs/粉雪、フワリ。-Lily.μ.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">缺氧-安苏羽.128.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/缺氧-安苏羽.128.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">若月亮没来</h5>
+                    <p class="text-muted">王宇宙Leto/乔浚丞</p>
+                    <a href="songs/若月亮没来 (若是月亮还没来) - 王宇宙Leto,乔浚丞.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">西楼儿女(Live) - 海来阿木.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/西楼儿女(Live) - 海来阿木.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">起风了（Cover 高橋優）</h5>
+                    <p class="text-muted">买辣椒也用券</p>
+                    <a href="songs/买辣椒也用券 - 起风了（Cover 高橋優）.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">风吹一夏 - DP龙猪,Swei水,Rays陈袁.mp3</h5>
+                    <p class="text-muted">Unknown Artist</p>
+                    <a href="songs/风吹一夏 - DP龙猪,Swei水,Rays陈袁.html" class="btn btn-primary">
+                        Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 播放器脚本 -->
+    <script>
+        // 主题切换功能
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            document.getElementById('themeToggle').textContent = 
+                document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+        });
+
+        // 初始化主题状态
+        document.addEventListener('DOMContentLoaded', () => {
+            const isDark = localStorage.getItem('darkMode') === 'true';
+            if (isDark) document.body.classList.add('dark-mode');
+        });
+    </script>
+    
+    
+</body>
+</html>

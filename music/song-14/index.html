@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>初恋 - 戴佩妮</title>
+    <style>
+        /* 自定义样式 */
+        #lyrics-container {
+            height: 200px;
+            overflow-y: auto;
+        }
+        .lyric-line {
+            cursor: pointer;
+        }
+        .lyric-line.highlight {
+            color: blue;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #fff;
+        }
+        .dark-mode a {
+            color: #4299e1;
+        }
+        .dark-mode input {
+            background-color: #2d3748;
+            color: #fff;
+            border-color: #4a5568;
+        }
+        .dark-mode #lyrics-container {
+            background-color: #2d3748;
+        }
+        .dark-mode .lyric-line.highlight {
+            color: #4299e1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <h1 class="text-2xl font-bold">初恋 - 戴佩妮</h1>
+        <div class="flex space-x-4">
+            <select id="language-select" class="border border-gray-300 p-1">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <button id="theme-toggle" class="border border-gray-300 p-1">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/3">
+                
+                <img src="初恋(Live) - 戴佩妮,摩登兄弟刘宇宁.webp" alt="初恋 cover" class="w-full h-auto rounded shadow">
+                
+            </div>
+            <div class="w-full md:w-2/3">
+                <audio controls class="w-full">
+                    <source src="初恋(Live) - 戴佩妮,摩登兄弟刘宇宁.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="lyrics-container">
+                    
+                    <p class="lyric-line" data-timestamp="0.0">初恋 (Live) - 戴佩妮/摩登兄弟刘宇宁</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.4">词：郑国江</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.52">曲：村下孝藏</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.66">编曲：Kenn C</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.78">原唱：林志美</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.92">制作人：董健剑@KMS Shanghai</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.16">音乐总监：董健剑@KMS Shanghai</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.42">音乐统筹：海星猛@KMS Shanghai</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.68">声乐指导：葛琪璘@KMS Shanghai</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.94">和声编写：葛琪璘@KMS Shanghai</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.2">混音：赵靖@SBMS Beijing</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.37">音讯编辑：汝文博@SBMS Beijing</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.63">乐队总监：章谋圣</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.84">键盘手：马克/董音</p>
+                    
+                    <p class="lyric-line" data-timestamp="3.07">吉他手：张楚弦/毕赫宸</p>
+                    
+                    <p class="lyric-line" data-timestamp="3.36">贝斯手：努而德柯</p>
+                    
+                    <p class="lyric-line" data-timestamp="3.56">鼓手：郝稷伦</p>
+                    
+                    <p class="lyric-line" data-timestamp="3.71">和音：杨画画/海洋/王梓琼</p>
+                    
+                    <p class="lyric-line" data-timestamp="4.06">PGM：陈佑峰</p>
+                    
+                    <p class="lyric-line" data-timestamp="4.17">弦乐：靳海音®管弦乐团</p>
+                    
+                    <p class="lyric-line" data-timestamp="4.46">舞台秀导演团队：ShowPro</p>
+                    
+                    <p class="lyric-line" data-timestamp="4.69">舞蹈总监：夏影</p>
+                    
+                    <p class="lyric-line" data-timestamp="4.87">编舞：郭伟</p>
+                    
+                    <p class="lyric-line" data-timestamp="4.98">舞团：I-Stage</p>
+                    
+                    <p class="lyric-line" data-timestamp="5.07">周(念白)：</p>
+                    
+                    <p class="lyric-line" data-timestamp="5.33">唔识点解</p>
+                    
+                    <p class="lyric-line" data-timestamp="7.87">心好乱好乱</p>
+                    
+                    <p class="lyric-line" data-timestamp="11.1">成日都挂住佢</p>
+                    
+                    <p class="lyric-line" data-timestamp="14.44">分分钟都挂住佢</p>
+                    
+                    <p class="lyric-line" data-timestamp="18.94">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="20.47">分分钟都盼望跟他见面</p>
+                    
+                    <p class="lyric-line" data-timestamp="26.98">我从来没怨</p>
+                    
+                    <p class="lyric-line" data-timestamp="30.97">刘：</p>
+                    
+                    <p class="lyric-line" data-timestamp="31.45">分分钟都渴望与她相见</p>
+                    
+                    <p class="lyric-line" data-timestamp="36.87">在路上碰着亦乐上几天</p>
+                    
+                    <p class="lyric-line" data-timestamp="43.38">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="43.74">轻快的感觉飘上面</p>
+                    
+                    <p class="lyric-line" data-timestamp="65.16">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="65.72">爱恋没经验</p>
+                    
+                    <p class="lyric-line" data-timestamp="69.19">今天初发现</p>
+                    
+                    <p class="lyric-line" data-timestamp="72.8">遥遥共他见一面</p>
+                    
+                    <p class="lyric-line" data-timestamp="76.41">那份快乐太新鲜</p>
+                    
+                    <p class="lyric-line" data-timestamp="79.78999999999999">刘：</p>
+                    
+                    <p class="lyric-line" data-timestamp="80.13">我一夜失眠</p>
+                    
+                    <p class="lyric-line" data-timestamp="83.71000000000001">影子心里现</p>
+                    
+                    <p class="lyric-line" data-timestamp="87.33">问为何共她见一面</p>
+                    
+                    <p class="lyric-line" data-timestamp="90.96000000000001">美丽印象似初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="95.3">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="96.25">默默望着是</p>
+                    
+                    <p class="lyric-line" data-timestamp="98.53">默默望着那目光似电</p>
+                    
+                    <p class="lyric-line" data-timestamp="103.75999999999999">那刹那接触已令我倒颠</p>
+                    
+                    <p class="lyric-line" data-timestamp="109.97999999999999">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="110.34">分分钟都盼望跟他见面</p>
+                    
+                    <p class="lyric-line" data-timestamp="114.14">默默地伫候亦从来没怨</p>
+                    
+                    <p class="lyric-line" data-timestamp="117.33">刘：</p>
+                    
+                    <p class="lyric-line" data-timestamp="117.62">分分钟都渴望与她相见</p>
+                    
+                    <p class="lyric-line" data-timestamp="120.84">(戴：Ha ha)</p>
+                    
+                    <p class="lyric-line" data-timestamp="121.34">在路上碰着亦乐上几天</p>
+                    
+                    <p class="lyric-line" data-timestamp="123.85">(戴合：乐上几天)</p>
+                    
+                    <p class="lyric-line" data-timestamp="125.32">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="125.67">轻快的感觉飘上面</p>
+                    
+                    <p class="lyric-line" data-timestamp="129.41">可爱的一个初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="134.68">默默 默默地</p>
+                    
+                    <p class="lyric-line" data-timestamp="138.21">分分钟初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="140.77">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="141.86">爱恋没经验</p>
+                    
+                    <p class="lyric-line" data-timestamp="144.71">刘：</p>
+                    
+                    <p class="lyric-line" data-timestamp="145.5">今天初发现</p>
+                    
+                    <p class="lyric-line" data-timestamp="148.19">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="149.11">遥遥共他见一面</p>
+                    
+                    <p class="lyric-line" data-timestamp="152.78">那份快乐太新鲜</p>
+                    
+                    <p class="lyric-line" data-timestamp="156.16">刘：</p>
+                    
+                    <p class="lyric-line" data-timestamp="156.53">我一夜失眠</p>
+                    
+                    <p class="lyric-line" data-timestamp="159.14">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="160.04">影子心里现</p>
+                    
+                    <p class="lyric-line" data-timestamp="162.89">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="163.57">问为何共他见一面</p>
+                    
+                    <p class="lyric-line" data-timestamp="167.2">美丽印象似初恋 ha</p>
+                    
+                    <p class="lyric-line" data-timestamp="173.02">轻快的感觉啊</p>
+                    
+                    <p class="lyric-line" data-timestamp="175.38">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="176.46">默默望着是</p>
+                    
+                    <p class="lyric-line" data-timestamp="178.52">默默望着那目光似电</p>
+                    
+                    <p class="lyric-line" data-timestamp="183.72">那刹那接触已令我倒颠</p>
+                    
+                    <p class="lyric-line" data-timestamp="190.19">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="190.44">分分钟都盼望跟他见面</p>
+                    
+                    <p class="lyric-line" data-timestamp="193.96">默默地伫候亦从来没怨</p>
+                    
+                    <p class="lyric-line" data-timestamp="197.26">刘：</p>
+                    
+                    <p class="lyric-line" data-timestamp="197.57">分分钟都渴望与她相见</p>
+                    
+                    <p class="lyric-line" data-timestamp="199.89">(戴：渴望与他相见)</p>
+                    
+                    <p class="lyric-line" data-timestamp="201.14">在路上碰着亦乐上几天</p>
+                    
+                    <p class="lyric-line" data-timestamp="203.52">(戴：碰着乐上几天 轻快)</p>
+                    
+                    <p class="lyric-line" data-timestamp="205.69">轻快的感觉飘上</p>
+                    
+                    <p class="lyric-line" data-timestamp="206.85">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="206.99">分分钟都盼望跟他见面</p>
+                    
+                    <p class="lyric-line" data-timestamp="209.67000000000002">(刘：盼望跟她见面)</p>
+                    
+                    <p class="lyric-line" data-timestamp="209.93">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="210.2">默默地伫候亦从来没怨</p>
+                    
+                    <p class="lyric-line" data-timestamp="213.92000000000002">分分钟都渴望与他相见</p>
+                    
+                    <p class="lyric-line" data-timestamp="217.55">在路上碰着亦乐上几天</p>
+                    
+                    <p class="lyric-line" data-timestamp="222.03">轻快的感觉飘上面</p>
+                    
+                    <p class="lyric-line" data-timestamp="227.62">可爱的一个初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="230.93">戴：</p>
+                    
+                    <p class="lyric-line" data-timestamp="231.17000000000002">轻快的感觉飘上面</p>
+                    
+                    <p class="lyric-line" data-timestamp="234.55">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="234.86">可爱的一个初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="240.01">默默 默默地</p>
+                    
+                    <p class="lyric-line" data-timestamp="243.74">分分钟初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="247.26">默默 默默地</p>
+                    
+                    <p class="lyric-line" data-timestamp="250.94">分分钟初恋</p>
+                    
+                    <p class="lyric-line" data-timestamp="256.31">合：</p>
+                    
+                    <p class="lyric-line" data-timestamp="257.81">初恋</p>
+                    
+                </div>
+                <button id="download-button" class="border border-gray-300 p-2 mt-2" onclick="downloadSong('初恋(Live) - 戴佩妮,摩登兄弟刘宇宁.mp3')">Download</button>
+                <input type="password" id="download-password" class="border border-gray-300 p-2 mt-2" placeholder="Enter password">
+            </div>
+        </div>
+        <div class="flex space-x-2 mt-4">
+            <a href="#" class="text-blue-500" onclick="shareTo('weibo', window.location.href); return false;">
+                <i class="fa-brands fa-weibo"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('twitter', window.location.href); return false;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('qq', window.location.href); return false;">
+                <i class="fa-brands fa-qq"></i>
+            </a>
+        </div>
+        <!-- Waline 评论区容器 -->
+        <div id="waline" class="mt-4"></div>
+    </main>
+    <script>
+        const audio = document.querySelector('audio');
+        const lyricsContainer = document.getElementById('lyrics-container');
+        const lyricLines = lyricsContainer.getElementsByClassName('lyric-line');
+        const languageSelect = document.getElementById('language-select');
+        const themeToggle = document.getElementById('theme-toggle');
+        const downloadButton = document.getElementById('download-button');
+        const downloadPassword = document.getElementById('download-password');
+
+        audio.addEventListener('timeupdate', function () {
+            const currentTime = this.currentTime;
+            for (let i = 0; i < lyricLines.length; i++) {
+                const line = lyricLines[i];
+                const timestamp = parseFloat(line.dataset.timestamp);
+                if (i === lyricLines.length - 1) {
+                    if (currentTime >= timestamp) {
+                        setHighlight(line);
+                    }
+                } else {
+                    const nextLine = lyricLines[i + 1];
+                    const nextTimestamp = parseFloat(nextLine.dataset.timestamp);
+                    if (currentTime >= timestamp && currentTime < nextTimestamp) {
+                        setHighlight(line);
+                        break;
+                    }
+                }
+            }
+        });
+
+        function setHighlight(line) {
+            for (let i = 0; i < lyricLines.length; i++) {
+                lyricLines[i].classList.remove('highlight');
+            }
+            line.classList.add('highlight');
+            line.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        for (let i = 0; i < lyricLines.length; i++) {
+            const line = lyricLines[i];
+            line.addEventListener('click', function () {
+                const timestamp = parseFloat(this.dataset.timestamp);
+                audio.currentTime = timestamp;
+            });
+        }
+
+        languageSelect.addEventListener('change', function () {
+            const lang = this.value;
+            fetch(`language/${lang}.json`)
+              .then(response => response.json())
+              .then(data => {
+                    // 简单示例，替换标题
+                    document.title = `${data.song_title_prefix} ${'初恋 - 戴佩妮'}`;
+                    downloadButton.textContent = data.download_button_text;
+                    downloadPassword.placeholder = data.download_password_placeholder;
+                });
+        });
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                this.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        function shareTo(platform, url) {
+            let shareUrl;
+            switch (platform) {
+                case 'weibo':
+                    shareUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'qq':
+                    shareUrl = `http://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            window.open(shareUrl, '_blank');
+        }
+
+        function downloadSong(mp3Url) {
+            const password = downloadPassword.value;
+            if (password === '123456') {
+                const a = document.createElement('a');
+                a.href = mp3Url;
+                a.download = mp3Url;
+                a.click();
+            } else {
+                alert('Incorrect password');
+            }
+        }
+
+        // Waline 配置
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://walineycyyq.netlify.app/'
+        });
+    </script>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+</body>
+</html>    

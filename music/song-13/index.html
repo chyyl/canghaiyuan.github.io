@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>凤凰花开的路口 - 林志炫</title>
+    <style>
+        /* 自定义样式 */
+        #lyrics-container {
+            height: 200px;
+            overflow-y: auto;
+        }
+        .lyric-line {
+            cursor: pointer;
+        }
+        .lyric-line.highlight {
+            color: blue;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #fff;
+        }
+        .dark-mode a {
+            color: #4299e1;
+        }
+        .dark-mode input {
+            background-color: #2d3748;
+            color: #fff;
+            border-color: #4a5568;
+        }
+        .dark-mode #lyrics-container {
+            background-color: #2d3748;
+        }
+        .dark-mode .lyric-line.highlight {
+            color: #4299e1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <h1 class="text-2xl font-bold">凤凰花开的路口 - 林志炫</h1>
+        <div class="flex space-x-4">
+            <select id="language-select" class="border border-gray-300 p-1">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <button id="theme-toggle" class="border border-gray-300 p-1">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/3">
+                
+                <img src="凤凰花开的路口 - 林志炫.webp" alt="凤凰花开的路口 cover" class="w-full h-auto rounded shadow">
+                
+            </div>
+            <div class="w-full md:w-2/3">
+                <audio controls class="w-full">
+                    <source src="凤凰花开的路口 - 林志炫.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="lyrics-container">
+                    
+                    <p class="lyric-line" data-timestamp="0.0">凤凰花开的路口 + 演奏曲 - 林志炫 (Terry Lin)</p>
+                    
+                    <p class="lyric-line" data-timestamp="21.21">又到凤凰花朵开放的时候</p>
+                    
+                    <p class="lyric-line" data-timestamp="28.44">想起某个好久不见老朋友</p>
+                    
+                    <p class="lyric-line" data-timestamp="35.71">记忆跟着感觉慢慢变鲜活</p>
+                    
+                    <p class="lyric-line" data-timestamp="42.59">染红的山坡到别的路口</p>
+                    
+                    <p class="lyric-line" data-timestamp="49.73">青春带走了什么留下了什么</p>
+                    
+                    <p class="lyric-line" data-timestamp="56.82">剩一片感动在心窝</p>
+                    
+                    <p class="lyric-line" data-timestamp="64.72"></p>
+                    
+                    <p class="lyric-line" data-timestamp="66.76">时光的河入海流</p>
+                    
+                    <p class="lyric-line" data-timestamp="70.58">终于我们分头走</p>
+                    
+                    <p class="lyric-line" data-timestamp="74.6">没有哪个港口</p>
+                    
+                    <p class="lyric-line" data-timestamp="78.08">是永远的停留</p>
+                    
+                    <p class="lyric-line" data-timestamp="80.84">脑海之中有一个凤凰花开的路口</p>
+                    
+                    <p class="lyric-line" data-timestamp="88.69">有我最珍惜的朋友</p>
+                    
+                    <p class="lyric-line" data-timestamp="96.78999999999999"></p>
+                    
+                    <p class="lyric-line" data-timestamp="99.3">也许值得纪念的事情不多</p>
+                    
+                    <p class="lyric-line" data-timestamp="106.55">至少还有这段回忆够深刻</p>
+                    
+                    <p class="lyric-line" data-timestamp="113.47">是否远方的你有同样感受</p>
+                    
+                    <p class="lyric-line" data-timestamp="120.58">成长的坎坷分享的片刻</p>
+                    
+                    <p class="lyric-line" data-timestamp="127.69">当我又再次唱起你写下的歌</p>
+                    
+                    <p class="lyric-line" data-timestamp="134.72">仿佛又回到那时候</p>
+                    
+                    <p class="lyric-line" data-timestamp="144.32999999999998">时光的河入海流</p>
+                    
+                    <p class="lyric-line" data-timestamp="148.32">终于我们分头走</p>
+                    
+                    <p class="lyric-line" data-timestamp="152.32">没有哪个港口</p>
+                    
+                    <p class="lyric-line" data-timestamp="155.79">是永远的停留</p>
+                    
+                    <p class="lyric-line" data-timestamp="158.43">脑海之中有一个凤凰花开的路口</p>
+                    
+                    <p class="lyric-line" data-timestamp="166.42000000000002">有我最珍惜的朋友</p>
+                    
+                    <p class="lyric-line" data-timestamp="173.43">几度花开花落</p>
+                    
+                    <p class="lyric-line" data-timestamp="176.8">有时快乐有时落寞</p>
+                    
+                    <p class="lyric-line" data-timestamp="180.47">很欣慰生命某段时刻</p>
+                    
+                    <p class="lyric-line" data-timestamp="184.32">曾一起度过</p>
+                    
+                    <p class="lyric-line" data-timestamp="192.34"></p>
+                    
+                    <p class="lyric-line" data-timestamp="194.98">时光的河入海流</p>
+                    
+                    <p class="lyric-line" data-timestamp="199.15">终于我们分头走</p>
+                    
+                    <p class="lyric-line" data-timestamp="203.21">没有哪个港口</p>
+                    
+                    <p class="lyric-line" data-timestamp="206.69">是永远的停留</p>
+                    
+                    <p class="lyric-line" data-timestamp="209.29">脑海之中有一个凤凰花开的路口</p>
+                    
+                    <p class="lyric-line" data-timestamp="217.23">有我最珍惜的朋友</p>
+                    
+                    <p class="lyric-line" data-timestamp="225.93">给我最珍惜的朋友</p>
+                    
+                </div>
+                <button id="download-button" class="border border-gray-300 p-2 mt-2" onclick="downloadSong('凤凰花开的路口 - 林志炫.mp3')">Download</button>
+                <input type="password" id="download-password" class="border border-gray-300 p-2 mt-2" placeholder="Enter password">
+            </div>
+        </div>
+        <div class="flex space-x-2 mt-4">
+            <a href="#" class="text-blue-500" onclick="shareTo('weibo', window.location.href); return false;">
+                <i class="fa-brands fa-weibo"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('twitter', window.location.href); return false;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('qq', window.location.href); return false;">
+                <i class="fa-brands fa-qq"></i>
+            </a>
+        </div>
+        <!-- Waline 评论区容器 -->
+        <div id="waline" class="mt-4"></div>
+    </main>
+    <script>
+        const audio = document.querySelector('audio');
+        const lyricsContainer = document.getElementById('lyrics-container');
+        const lyricLines = lyricsContainer.getElementsByClassName('lyric-line');
+        const languageSelect = document.getElementById('language-select');
+        const themeToggle = document.getElementById('theme-toggle');
+        const downloadButton = document.getElementById('download-button');
+        const downloadPassword = document.getElementById('download-password');
+
+        audio.addEventListener('timeupdate', function () {
+            const currentTime = this.currentTime;
+            for (let i = 0; i < lyricLines.length; i++) {
+                const line = lyricLines[i];
+                const timestamp = parseFloat(line.dataset.timestamp);
+                if (i === lyricLines.length - 1) {
+                    if (currentTime >= timestamp) {
+                        setHighlight(line);
+                    }
+                } else {
+                    const nextLine = lyricLines[i + 1];
+                    const nextTimestamp = parseFloat(nextLine.dataset.timestamp);
+                    if (currentTime >= timestamp && currentTime < nextTimestamp) {
+                        setHighlight(line);
+                        break;
+                    }
+                }
+            }
+        });
+
+        function setHighlight(line) {
+            for (let i = 0; i < lyricLines.length; i++) {
+                lyricLines[i].classList.remove('highlight');
+            }
+            line.classList.add('highlight');
+            line.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        for (let i = 0; i < lyricLines.length; i++) {
+            const line = lyricLines[i];
+            line.addEventListener('click', function () {
+                const timestamp = parseFloat(this.dataset.timestamp);
+                audio.currentTime = timestamp;
+            });
+        }
+
+        languageSelect.addEventListener('change', function () {
+            const lang = this.value;
+            fetch(`language/${lang}.json`)
+              .then(response => response.json())
+              .then(data => {
+                    // 简单示例，替换标题
+                    document.title = `${data.song_title_prefix} ${'凤凰花开的路口 - 林志炫'}`;
+                    downloadButton.textContent = data.download_button_text;
+                    downloadPassword.placeholder = data.download_password_placeholder;
+                });
+        });
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                this.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        function shareTo(platform, url) {
+            let shareUrl;
+            switch (platform) {
+                case 'weibo':
+                    shareUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'qq':
+                    shareUrl = `http://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            window.open(shareUrl, '_blank');
+        }
+
+        function downloadSong(mp3Url) {
+            const password = downloadPassword.value;
+            if (password === '123456') {
+                const a = document.createElement('a');
+                a.href = mp3Url;
+                a.download = mp3Url;
+                a.click();
+            } else {
+                alert('Incorrect password');
+            }
+        }
+
+        // Waline 配置
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://walineycyyq.netlify.app/'
+        });
+    </script>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+</body>
+</html>    

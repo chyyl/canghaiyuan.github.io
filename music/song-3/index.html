@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿 - Unknown Artist</title>
+    <style>
+        /* 自定义样式 */
+        #lyrics-container {
+            height: 200px;
+            overflow-y: auto;
+        }
+        .lyric-line {
+            cursor: pointer;
+        }
+        .lyric-line.highlight {
+            color: blue;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #fff;
+        }
+        .dark-mode a {
+            color: #4299e1;
+        }
+        .dark-mode input {
+            background-color: #2d3748;
+            color: #fff;
+            border-color: #4a5568;
+        }
+        .dark-mode #lyrics-container {
+            background-color: #2d3748;
+        }
+        .dark-mode .lyric-line.highlight {
+            color: #4299e1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <h1 class="text-2xl font-bold">Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿 - Unknown Artist</h1>
+        <div class="flex space-x-4">
+            <select id="language-select" class="border border-gray-300 p-1">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <button id="theme-toggle" class="border border-gray-300 p-1">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/3">
+                
+                <img src="Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.webp" alt="Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿 cover" class="w-full h-auto rounded shadow">
+                
+            </div>
+            <div class="w-full md:w-2/3">
+                <audio controls class="w-full">
+                    <source src="Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="lyrics-container">
+                    
+                    <p class="lyric-line" data-timestamp="0.0">词 : 陈冠希/MC仁/厨房仔</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0">曲 : Wyshmaster</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0">Arranged by : Wyshmaster</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0">Backing Vocals : 应采儿</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0">Produced by : 陈冠希/MC仁/厨房仔</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0">商务 : SLOW RHYME MUSIC@团队</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0">企划 : ManrinXu</p>
+                    
+                    <p class="lyric-line" data-timestamp="0.0"></p>
+                    
+                    <p class="lyric-line" data-timestamp="9.61">应采儿：</p>
+                    
+                    <p class="lyric-line" data-timestamp="10.01">去到每一度 点解总会有得嘈</p>
+                    
+                    <p class="lyric-line" data-timestamp="13.93">难道继续困死阴湿小气岛</p>
+                    
+                    <p class="lyric-line" data-timestamp="19.25">我有一路 清楚找我有幅图</p>
+                    
+                    <p class="lyric-line" data-timestamp="23.41">闲话素来任你讲卡都好储</p>
+                    
+                    <p class="lyric-line" data-timestamp="27.47">厨房仔：</p>
+                    
+                    <p class="lyric-line" data-timestamp="28.84">走 去一个冇压力嘅地方</p>
+                    
+                    <p class="lyric-line" data-timestamp="31.54">尽情释放 唔驶理人哋眼光</p>
+                    
+                    <p class="lyric-line" data-timestamp="33.71">黑色白色 唔驶睇人面色</p>
+                    
+                    <p class="lyric-line" data-timestamp="36.22">意识空间 拥有无穷面积</p>
+                    
+                    <p class="lyric-line" data-timestamp="38.54">日出 日落 升空 降落</p>
+                    
+                    <p class="lyric-line" data-timestamp="43.27">一幕又一幕 如梦生命片段重现</p>
+                    
+                    <p class="lyric-line" data-timestamp="45.64">边一幕最值得回味快乐</p>
+                    
+                    <p class="lyric-line" data-timestamp="47.98">世世代代 一个一个部落起落</p>
+                    
+                    <p class="lyric-line" data-timestamp="50.4">边度着落 降临福地</p>
+                    
+                    <p class="lyric-line" data-timestamp="52.83">地球人 已经忘记 幸福 气味</p>
+                    
+                    <p class="lyric-line" data-timestamp="57.15">太空旅程 一步内 由呢度去到嗰度</p>
+                    
+                    <p class="lyric-line" data-timestamp="60.369">两道光线引导 启动星际航道</p>
+                    
+                    <p class="lyric-line" data-timestamp="62.689">随意门 去边度就边度</p>
+                    
+                    <p class="lyric-line" data-timestamp="64.79">感应天路 走佬</p>
+                    
+                    <p class="lyric-line" data-timestamp="66.54">应采儿：</p>
+                    
+                    <p class="lyric-line" data-timestamp="66.939">On a boat on a train or in an airplane</p>
+                    
+                    <p class="lyric-line" data-timestamp="71.86">There's nothing I'd rather do</p>
+                    
+                    <p class="lyric-line" data-timestamp="76.689">When we fly in the sky and we go so high</p>
+                    
+                    <p class="lyric-line" data-timestamp="81.31">I've got the world with you</p>
+                    
+                    <p class="lyric-line" data-timestamp="85.90899999999999">去到每一度 点解总会有得嘈</p>
+                    
+                    <p class="lyric-line" data-timestamp="89.98">难道继续困死阴湿小气岛</p>
+                    
+                    <p class="lyric-line" data-timestamp="95.25">我有一路 清楚找我有幅图</p>
+                    
+                    <p class="lyric-line" data-timestamp="99.50999999999999">闲话素来任你讲卡都好储</p>
+                    
+                    <p class="lyric-line" data-timestamp="104.45">陈冠希：</p>
+                    
+                    <p class="lyric-line" data-timestamp="104.84">细个嗰阵时 日日喺度发梦</p>
+                    
+                    <p class="lyric-line" data-timestamp="106.97">老师话我长大之后一定冇用</p>
+                    
+                    <p class="lyric-line" data-timestamp="109.18">你咁嘅态度 我戥你老豆老母阴公</p>
+                    
+                    <p class="lyric-line" data-timestamp="112.2">但系今时今日 超西飞喺天空</p>
+                    
+                    <p class="lyric-line" data-timestamp="114.769">飞 飞到洛杉矶</p>
+                    
+                    <p class="lyric-line" data-timestamp="116.489">飞飞飞 继续超越自己</p>
+                    
+                    <p class="lyric-line" data-timestamp="118.92">而家飞飞飞度边度都似我屋企</p>
+                    
+                    <p class="lyric-line" data-timestamp="121.29">同我之前啲老师</p>
+                    
+                    <p class="lyric-line" data-timestamp="122.67">我而家举起我个杯</p>
+                    
+                    <p class="lyric-line" data-timestamp="124.739">我冇放喺心内向你敬礼</p>
+                    
+                    <p class="lyric-line" data-timestamp="126.92">一齐猜猜个枚</p>
+                    
+                    <p class="lyric-line" data-timestamp="128.28">247 玩成晚 我同啲兄弟 唔会嗌攰</p>
+                    
+                    <p class="lyric-line" data-timestamp="130.699">代表CLOT 你可以叫我地CLOT Crew</p>
+                    
+                    <p class="lyric-line" data-timestamp="131.75">巴黎东京纽约马尔代夫</p>
+                    
+                    <p class="lyric-line" data-timestamp="134.34">感觉世界好闷</p>
+                    
+                    <p class="lyric-line" data-timestamp="136.669">细个发啲梦开始变现实</p>
+                    
+                    <p class="lyric-line" data-timestamp="138.31">除咗佢我个世界争咩 无乜</p>
+                    
+                    <p class="lyric-line" data-timestamp="140.3">应采儿：</p>
+                    
+                    <p class="lyric-line" data-timestamp="142.659">On a boat on a train or in an airplane</p>
+                    
+                    <p class="lyric-line" data-timestamp="143.06">There's nothing I'd rather do</p>
+                    
+                    <p class="lyric-line" data-timestamp="147.849">When we fly in the sky and we go so high</p>
+                    
+                    <p class="lyric-line" data-timestamp="152.72">I've got the world with you</p>
+                    
+                    <p class="lyric-line" data-timestamp="157.31">去到每一度 点解总会有得嘈</p>
+                    
+                    <p class="lyric-line" data-timestamp="161.94">难道继续困死阴湿小气岛</p>
+                    
+                    <p class="lyric-line" data-timestamp="166.00900000000001">我有一路 清楚找我有幅图</p>
+                    
+                    <p class="lyric-line" data-timestamp="171.22">闲话素来任你讲卡都好储</p>
+                    
+                    <p class="lyric-line" data-timestamp="175.46">MC仁：</p>
+                    
+                    <p class="lyric-line" data-timestamp="179.629">准备包袱走路 一步一步计算好</p>
+                    
+                    <p class="lyric-line" data-timestamp="180.68">冇最后说话 最后手稿</p>
+                    
+                    <p class="lyric-line" data-timestamp="185.55">冇嘢要透露 冇人走宝</p>
+                    
+                    <p class="lyric-line" data-timestamp="187.969">掉埋包袱走佬</p>
+                    
+                    <p class="lyric-line" data-timestamp="190.379">冇论乜嘢地步 不理疲劳</p>
+                    
+                    <p class="lyric-line" data-timestamp="193.939">天与地当被铺 冇任务 几咁好</p>
+                    
+                    <p class="lyric-line" data-timestamp="195.039">应采儿：</p>
+                    
+                    <p class="lyric-line" data-timestamp="199.62">On a boat on a train or in an airplane</p>
+                    
+                    <p class="lyric-line" data-timestamp="199.889">There's nothing I'd rather do</p>
+                    
+                    <p class="lyric-line" data-timestamp="204.82999999999998">When we fly in the sky and we go so high</p>
+                    
+                    <p class="lyric-line" data-timestamp="209.78">I've got the world with you</p>
+                    
+                    <p class="lyric-line" data-timestamp="214.34">去到每一度 点解总会有得嘈</p>
+                    
+                    <p class="lyric-line" data-timestamp="218.93">难道继续困死阴湿小气岛</p>
+                    
+                    <p class="lyric-line" data-timestamp="223.00900000000001">我有一路 清楚找我有幅图</p>
+                    
+                    <p class="lyric-line" data-timestamp="228.289">闲话素来任你讲卡都好储</p>
+                    
+                    <p class="lyric-line" data-timestamp="232.50900000000001">去到每一度 点解总会有得嘈</p>
+                    
+                    <p class="lyric-line" data-timestamp="237.789">难道继续困死阴湿小气岛</p>
+                    
+                    <p class="lyric-line" data-timestamp="242.02">我有一路 清楚找我有幅图</p>
+                    
+                    <p class="lyric-line" data-timestamp="247.3">闲话素来任你讲卡都好储</p>
+                    
+                </div>
+                <button id="download-button" class="border border-gray-300 p-2 mt-2" onclick="downloadSong('Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.mp3')">Download</button>
+                <input type="password" id="download-password" class="border border-gray-300 p-2 mt-2" placeholder="Enter password">
+            </div>
+        </div>
+        <div class="flex space-x-2 mt-4">
+            <a href="#" class="text-blue-500" onclick="shareTo('weibo', window.location.href); return false;">
+                <i class="fa-brands fa-weibo"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('twitter', window.location.href); return false;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('qq', window.location.href); return false;">
+                <i class="fa-brands fa-qq"></i>
+            </a>
+        </div>
+        <!-- Waline 评论区容器 -->
+        <div id="waline" class="mt-4"></div>
+    </main>
+    <script>
+        const audio = document.querySelector('audio');
+        const lyricsContainer = document.getElementById('lyrics-container');
+        const lyricLines = lyricsContainer.getElementsByClassName('lyric-line');
+        const languageSelect = document.getElementById('language-select');
+        const themeToggle = document.getElementById('theme-toggle');
+        const downloadButton = document.getElementById('download-button');
+        const downloadPassword = document.getElementById('download-password');
+
+        audio.addEventListener('timeupdate', function () {
+            const currentTime = this.currentTime;
+            for (let i = 0; i < lyricLines.length; i++) {
+                const line = lyricLines[i];
+                const timestamp = parseFloat(line.dataset.timestamp);
+                if (i === lyricLines.length - 1) {
+                    if (currentTime >= timestamp) {
+                        setHighlight(line);
+                    }
+                } else {
+                    const nextLine = lyricLines[i + 1];
+                    const nextTimestamp = parseFloat(nextLine.dataset.timestamp);
+                    if (currentTime >= timestamp && currentTime < nextTimestamp) {
+                        setHighlight(line);
+                        break;
+                    }
+                }
+            }
+        });
+
+        function setHighlight(line) {
+            for (let i = 0; i < lyricLines.length; i++) {
+                lyricLines[i].classList.remove('highlight');
+            }
+            line.classList.add('highlight');
+            line.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        for (let i = 0; i < lyricLines.length; i++) {
+            const line = lyricLines[i];
+            line.addEventListener('click', function () {
+                const timestamp = parseFloat(this.dataset.timestamp);
+                audio.currentTime = timestamp;
+            });
+        }
+
+        languageSelect.addEventListener('change', function () {
+            const lang = this.value;
+            fetch(`language/${lang}.json`)
+              .then(response => response.json())
+              .then(data => {
+                    // 简单示例，替换标题
+                    document.title = `${data.song_title_prefix} ${'Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿 - Unknown Artist'}`;
+                    downloadButton.textContent = data.download_button_text;
+                    downloadPassword.placeholder = data.download_password_placeholder;
+                });
+        });
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                this.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        function shareTo(platform, url) {
+            let shareUrl;
+            switch (platform) {
+                case 'weibo':
+                    shareUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'qq':
+                    shareUrl = `http://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            window.open(shareUrl, '_blank');
+        }
+
+        function downloadSong(mp3Url) {
+            const password = downloadPassword.value;
+            if (password === '123456') {
+                const a = document.createElement('a');
+                a.href = mp3Url;
+                a.download = mp3Url;
+                a.click();
+            } else {
+                alert('Incorrect password');
+            }
+        }
+
+        // Waline 配置
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://walineycyyq.netlify.app/'
+        });
+    </script>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+</body>
+</html>    

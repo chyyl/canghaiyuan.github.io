@@ -1,651 +1,776 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Music Library</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- 自定义样式 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>我的音乐网站</title>
     <style>
-        :root {
-            --primary-color: #3f51b5;
-            --bg-color: #ffffff;
-            --text-color: #212529;
+        /* 自定义样式 */
+        .dark-mode {
+            background-color: #1a202c;
+            color: #fff;
         }
-
-        body.dark-mode {
-            --bg-color: #1a1a1a;
-            --text-color: #f8f9fa;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+        .dark-mode a {
+            color: #4299e1;
         }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: all 0.3s ease;
-        }
-
-        .navbar {
-            background-color: var(--primary-color)!important;
-        }
-
-        .audio-player {
-            background: rgba(0,0,0,0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .progress-bar-container {
-            height: 5px;
-            background: #dee2e6;
-            cursor: pointer;
-            margin: 1rem 0;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: var(--primary-color);
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-
-        .album-art {
-            border-radius: 15px;
-            max-width: 300px;
-            margin: 1rem auto;
+        .dark-mode input {
+            background-color: #2d3748;
+            color: #fff;
+            border-color: #4a5568;
         }
     </style>
 </head>
-<body class="dark-mode">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">My Music Library</a>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <h1 class="text-2xl font-bold">我的音乐网站</h1>
+        <div class="flex space-x-4">
+            <select id="language-select" class="border border-gray-300 p-1">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <button id="theme-toggle" class="border border-gray-300 p-1">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <input type="text" id="search-input" class="border border-gray-300 p-2 w-full mb-4" placeholder="Search songs...">
+        <ul id="song-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             
-            <div class="d-flex">
-                <button class="btn btn-outline-light" id="themeToggle">
-                    🌙
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container mt-4">
-        
-<div class="container">
-    <h1 class="mt-5">My Music Library</h1>
-    
-    <div class="row mt-4">
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Black Magic (Tim Croft Remix)-Jonasu.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/Black Magic (Tim Croft Remix)-Jonasu.128.html" class="btn btn-primary">
-                        Play
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-0/index.html" class="text-blue-500 hover:underline">故梦(琵琶版) - 千年破晓</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-0/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-0/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-0/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-1/index.html" class="text-blue-500 hover:underline">半山听雨-洞箫 - 孤箫</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-1/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-1/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-1/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Shots (Broiler Remix) - Imagine Dragons,Broiler.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/Shots (Broiler Remix) - Imagine Dragons,Broiler.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-2/index.html" class="text-blue-500 hover:underline">Black Magic (Tim Croft Remix)-Jonasu.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-2/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-2/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-2/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Star Unkind (Lanfranchi & Farina Remix) - 2Someone,Lanfranchi,Farina.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/Star Unkind (Lanfranchi & Farina Remix) - 2Someone,Lanfranchi,Farina.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-3/index.html" class="text-blue-500 hover:underline">Everywhere We Go - 陈冠希,MC仁,厨房仔,应采儿 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-3/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-3/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-3/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Sweet Dreams</h5>
-                    <p class="text-muted">Breathe Carolina</p>
-                    <a href="songs/Sweet Dreams - Breathe Carolina,Dropgun,Kaleena Zanders.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-4/index.html" class="text-blue-500 hover:underline">Shots (Broiler Remix) - Imagine Dragons,Broiler - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-4/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-4/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-4/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">kuwo</h5>
-                    <p class="text-muted">kuwo</p>
-                    <a href="songs/Take Me Hand-DAISHI DANCE,Cécile Corbel.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-5/index.html" class="text-blue-500 hover:underline">Star Unkind (Lanfranchi & Farina Remix) - 2Someone,Lanfranchi,Farina - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-5/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-5/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-5/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Ò»ÉúÓÐÄã</h5>
-                    <p class="text-muted">Ë®Ä¾Äê»ª</p>
-                    <a href="songs/一生有你-水木年华.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-6/index.html" class="text-blue-500 hover:underline">Sweet Dreams - Breathe Carolina</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-6/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-6/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-6/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Мокрые губы (Relanium, Prezzplay, Deen West Radio Remix) - Lx24,Relanium,Dj Prezzplay,Deen West.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/Мокрые губы (Relanium, Prezzplay, Deen West Radio Remix) - Lx24,Relanium,Dj Prezzplay,Deen West.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-7/index.html" class="text-blue-500 hover:underline">kuwo - kuwo</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-7/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-7/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-7/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">一路生花(DJ沈念版)-温奕心.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/一路生花(DJ沈念版)-温奕心.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-8/index.html" class="text-blue-500 hover:underline">Мокрые губы (Relanium, Prezzplay, Deen West Radio Remix) - Lx24,Relanium,Dj Prezzplay,Deen West - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-8/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-8/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-8/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">一路生花-BeatBrothers.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/一路生花-BeatBrothers.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-9/index.html" class="text-blue-500 hover:underline">一生有你-水木年华.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-9/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-9/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-9/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">三拜红尘凉-尹昔眠.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/三拜红尘凉-尹昔眠.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-10/index.html" class="text-blue-500 hover:underline">一路生花-BeatBrothers.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-10/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-10/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-10/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">凤凰花开的路口</h5>
-                    <p class="text-muted">林志炫</p>
-                    <a href="songs/凤凰花开的路口 - 林志炫.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-11/index.html" class="text-blue-500 hover:underline">一路生花(DJ沈念版)-温奕心.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-11/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-11/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-11/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">初恋</h5>
-                    <p class="text-muted">戴佩妮</p>
-                    <a href="songs/初恋(Live) - 戴佩妮,摩登兄弟刘宇宁.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-12/index.html" class="text-blue-500 hover:underline">三拜红尘凉-尹昔眠.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-12/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-12/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-12/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">半山听雨-洞箫</h5>
-                    <p class="text-muted">孤箫</p>
-                    <a href="songs/孤箫 - 半山听雨-洞箫.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-13/index.html" class="text-blue-500 hover:underline">凤凰花开的路口 - 林志炫</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-13/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-13/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-13/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">可能</h5>
-                    <p class="text-muted">程响</p>
-                    <a href="songs/可能 - 程响.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-14/index.html" class="text-blue-500 hover:underline">初恋 - 戴佩妮</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-14/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-14/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-14/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">在人间</h5>
-                    <p class="text-muted">王建房</p>
-                    <a href="songs/王建房 - 在人间.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-15/index.html" class="text-blue-500 hover:underline">可能 - 程响</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-15/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-15/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-15/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">在你的身边 - 盛哲.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/在你的身边 - 盛哲.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-16/index.html" class="text-blue-500 hover:underline">在人间 - 王建房</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-16/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-16/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-16/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">天下的乌鸦一般黑</h5>
-                    <p class="text-muted">小炎同学</p>
-                    <a href="songs/天下的乌鸦一般黑 - 小炎同学.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-17/index.html" class="text-blue-500 hover:underline">在你的身边 - 盛哲 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-17/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-17/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-17/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">奢香夫人-凤凰传奇.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/奢香夫人-凤凰传奇.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-18/index.html" class="text-blue-500 hover:underline">天下的乌鸦一般黑 - 小炎同学</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-18/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-18/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-18/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">如果我们在余生相遇</h5>
-                    <p class="text-muted">RE-D/是二哈ya</p>
-                    <a href="songs/如果我们在余生相遇·双鱼座 - 是二哈ya,RE-D.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-19/index.html" class="text-blue-500 hover:underline">奢香夫人-凤凰传奇.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-19/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-19/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-19/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">小城夏天-LBI利比.96.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/小城夏天-LBI利比.96.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-20/index.html" class="text-blue-500 hover:underline">如果我们在余生相遇 - RE-D/是二哈ya</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-20/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-20/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-20/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">小星星-汪苏泷.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/小星星-汪苏泷.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-21/index.html" class="text-blue-500 hover:underline">小城夏天-LBI利比.96 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-21/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-21/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-21/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">小美满</h5>
-                    <p class="text-muted">周深</p>
-                    <a href="songs/小美满 - 周深.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-22/index.html" class="text-blue-500 hover:underline">小星星-汪苏泷.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-22/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-22/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-22/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">就让这大雨全都落下-容祖儿.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/就让这大雨全都落下-容祖儿.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-23/index.html" class="text-blue-500 hover:underline">小美满 - 周深</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-23/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-23/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-23/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">我好像在哪见过你 - 薛之谦.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/我好像在哪见过你 - 薛之谦.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-24/index.html" class="text-blue-500 hover:underline">就让这大雨全都落下-容祖儿.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-24/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-24/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-24/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">我曾遇到一束光</h5>
-                    <p class="text-muted">叶斯淳</p>
-                    <a href="songs/我曾遇到一束光 - 叶斯淳.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-25/index.html" class="text-blue-500 hover:underline">我好像在哪见过你 - 薛之谦 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-25/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-25/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-25/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">我的纸飞机</h5>
-                    <p class="text-muted">GooGoo/王之睿</p>
-                    <a href="songs/我的纸飞机 - GooGoo,王之睿.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-26/index.html" class="text-blue-500 hover:underline">我曾遇到一束光 - 叶斯淳</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-26/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-26/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-26/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">我走后-小咪.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/我走后-小咪.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-27/index.html" class="text-blue-500 hover:underline">我的纸飞机 - GooGoo/王之睿</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-27/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-27/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-27/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">指纹-杜宣达.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/指纹-杜宣达.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-28/index.html" class="text-blue-500 hover:underline">我走后-小咪.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-28/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-28/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-28/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">故梦(琵琶版)</h5>
-                    <p class="text-muted">千年破晓</p>
-                    <a href="songs/千年破晓 - 故梦(琵琶版).html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-29/index.html" class="text-blue-500 hover:underline">指纹-杜宣达.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-29/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-29/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-29/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">春庭雪</h5>
-                    <p class="text-muted">邓寓君(等什么君)</p>
-                    <a href="songs/春庭雪 - 邓寓君(等什么君).html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-30/index.html" class="text-blue-500 hover:underline">春庭雪 - 邓寓君(等什么君)</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-30/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-30/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-30/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">暮色回响</h5>
-                    <p class="text-muted">吉星出租</p>
-                    <a href="songs/暮色回响 - 吉星出租.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-31/index.html" class="text-blue-500 hover:underline">暮色回响 - 吉星出租</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-31/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-31/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-31/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">最后一页 - 江语晨.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/最后一页 - 江语晨.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-32/index.html" class="text-blue-500 hover:underline">最后一页 - 江语晨 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-32/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-32/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-32/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">有点甜</h5>
-                    <p class="text-muted">汪苏泷/BY2</p>
-                    <a href="songs/有点甜 - 汪苏泷,BY2.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-33/index.html" class="text-blue-500 hover:underline">有点甜 - 汪苏泷/BY2</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-33/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-33/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-33/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">未必 - 言瑾羽.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/未必 - 言瑾羽.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-34/index.html" class="text-blue-500 hover:underline">未必 - 言瑾羽 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-34/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-34/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-34/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">梁山伯与茱丽叶 - yihuik苡慧,小包Zerinn.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/梁山伯与茱丽叶 - yihuik苡慧,小包Zerinn.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-35/index.html" class="text-blue-500 hover:underline">梁山伯与茱丽叶 - yihuik苡慧,小包Zerinn - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-35/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-35/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-35/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">每一句都很甜</h5>
-                    <p class="text-muted">李思雨</p>
-                    <a href="songs/每一句都很甜-新乐尘符.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-36/index.html" class="text-blue-500 hover:underline">每一句都很甜 - 李思雨</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-36/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-36/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-36/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">离别开出花 - 就是南方凯（项学凯）.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/离别开出花 - 就是南方凯（项学凯）.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-37/index.html" class="text-blue-500 hover:underline">离别开出花 - 就是南方凯（项学凯） - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-37/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-37/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-37/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">童话镇</h5>
-                    <p class="text-muted">陈一发儿</p>
-                    <a href="songs/陈一发儿 - 童话镇.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-38/index.html" class="text-blue-500 hover:underline">童话镇 - 陈一发儿</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-38/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-38/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-38/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">粉雪、フワリ。-Lily.μ.128.mp3</h5>
-                    <p class="text-muted">Lily.¦Ì</p>
-                    <a href="songs/粉雪、フワリ。-Lily.μ.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-39/index.html" class="text-blue-500 hover:underline">粉雪、フワリ。-Lily.μ.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-39/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-39/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-39/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">缺氧-安苏羽.128.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/缺氧-安苏羽.128.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-40/index.html" class="text-blue-500 hover:underline">缺氧-安苏羽.128 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-40/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-40/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-40/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">若月亮没来</h5>
-                    <p class="text-muted">王宇宙Leto/乔浚丞</p>
-                    <a href="songs/若月亮没来 (若是月亮还没来) - 王宇宙Leto,乔浚丞.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-41/index.html" class="text-blue-500 hover:underline">若月亮没来 - 王宇宙Leto/乔浚丞</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-41/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-41/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-41/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">西楼儿女(Live) - 海来阿木.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/西楼儿女(Live) - 海来阿木.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-42/index.html" class="text-blue-500 hover:underline">西楼儿女(Live) - 海来阿木 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-42/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-42/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-42/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">起风了（Cover 高橋優）</h5>
-                    <p class="text-muted">买辣椒也用券</p>
-                    <a href="songs/买辣椒也用券 - 起风了（Cover 高橋優）.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-43/index.html" class="text-blue-500 hover:underline">起风了（Cover 高橋優） - 买辣椒也用券</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-43/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-43/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-43/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">风吹一夏 - DP龙猪,Swei水,Rays陈袁.mp3</h5>
-                    <p class="text-muted">Unknown Artist</p>
-                    <a href="songs/风吹一夏 - DP龙猪,Swei水,Rays陈袁.html" class="btn btn-primary">
-                        Play
+            </li>
+            
+            <li class="bg-white p-4 rounded shadow">
+                <a href="/song-44/index.html" class="text-blue-500 hover:underline">风吹一夏 - DP龙猪,Swei水,Rays陈袁 - Unknown Artist</a>
+                <div class="flex space-x-2 mt-2">
+                    <a href="#" class="text-blue-500" onclick="shareTo('weibo', '/song-44/index.html'); return false;">
+                        <i class="fa-brands fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('twitter', '/song-44/index.html'); return false;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-500" onclick="shareTo('qq', '/song-44/index.html'); return false;">
+                        <i class="fa-brands fa-qq"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-        
-    </div>
-</div>
-
+            </li>
+            
+        </ul>
     </main>
-
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- 播放器脚本 -->
     <script>
-        // 主题切换功能
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-            document.getElementById('themeToggle').textContent = 
-                document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+        const searchInput = document.getElementById('search-input');
+        const songList = document.getElementById('song-list');
+        const songs = songList.getElementsByTagName('li');
+        const languageSelect = document.getElementById('language-select');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        searchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase();
+            for (let i = 0; i < songs.length; i++) {
+                const song = songs[i];
+                const title = song.textContent.toLowerCase();
+                if (title.includes(query)) {
+                    song.style.display = 'block';
+                } else {
+                    song.style.display = 'none';
+                }
+            }
         });
 
-        // 初始化主题状态
-        document.addEventListener('DOMContentLoaded', () => {
-            const isDark = localStorage.getItem('darkMode') === 'true';
-            if (isDark) document.body.classList.add('dark-mode');
+        languageSelect.addEventListener('change', function () {
+            const lang = this.value;
+            fetch(`language/${lang}.json`)
+              .then(response => response.json())
+              .then(data => {
+                    // 简单示例，替换标题
+                    document.title = data.site_title;
+                    searchInput.placeholder = data.search_placeholder;
+                });
         });
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                this.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        function shareTo(platform, url) {
+            let shareUrl;
+            switch (platform) {
+                case 'weibo':
+                    shareUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'qq':
+                    shareUrl = `http://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            window.open(shareUrl, '_blank');
+        }
     </script>
-    
-    
 </body>
-</html>
+</html>    

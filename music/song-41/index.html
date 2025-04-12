@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>若月亮没来 - 王宇宙Leto/乔浚丞</title>
+    <style>
+        /* 自定义样式 */
+        #lyrics-container {
+            height: 200px;
+            overflow-y: auto;
+        }
+        .lyric-line {
+            cursor: pointer;
+        }
+        .lyric-line.highlight {
+            color: blue;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #fff;
+        }
+        .dark-mode a {
+            color: #4299e1;
+        }
+        .dark-mode input {
+            background-color: #2d3748;
+            color: #fff;
+            border-color: #4a5568;
+        }
+        .dark-mode #lyrics-container {
+            background-color: #2d3748;
+        }
+        .dark-mode .lyric-line.highlight {
+            color: #4299e1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <h1 class="text-2xl font-bold">若月亮没来 - 王宇宙Leto/乔浚丞</h1>
+        <div class="flex space-x-4">
+            <select id="language-select" class="border border-gray-300 p-1">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+            </select>
+            <button id="theme-toggle" class="border border-gray-300 p-1">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full md:w-1/3">
+                
+                <img src="若月亮没来 (若是月亮还没来) - 王宇宙Leto,乔浚丞.jpg" alt="若月亮没来 cover" class="w-full h-auto rounded shadow">
+                
+            </div>
+            <div class="w-full md:w-2/3">
+                <audio controls class="w-full">
+                    <source src="若月亮没来 (若是月亮还没来) - 王宇宙Leto,乔浚丞.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="lyrics-container">
+                    
+                    <p class="lyric-line" data-timestamp="0.14">若月亮没来 (若是月亮还没来) - 王宇宙Leto/乔浚丞</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.86">词Lyrics by：姜洄</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.87">曲Composed by：李哲</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.88">编曲 Arranger：史嵩昊/韩冰</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.89">制作人Producer：贺贺</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.9">合声 Backing Vocals：王宇宙Leto/乔浚丞</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.92">录音师 Recording engineer：刘彦宏</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.93">混音师 Mixing engineer：刘彦宏</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.94">监制 Music supervisor：金华</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.95">发行人 Publisher：潘昊铖</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.96">企划推广 Planning：贺贺</p>
+                    
+                    <p class="lyric-line" data-timestamp="1.97">OP：北京华数文化传媒有限公司/即刻半音</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.0">营销协力 Marketing collaboration：阿子/隋冬雪可可豆/派大星</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.03">营销统筹 Marketing coordination：黄才娟/荣儿</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.05">营销推广机构 Marketing and promotion agencies：百纳娱乐/网益文化/华数音乐</p>
+                    
+                    <p class="lyric-line" data-timestamp="2.08">风吹过山 船靠了岸</p>
+                    
+                    <p class="lyric-line" data-timestamp="9.29">风光呀 一点点看</p>
+                    
+                    <p class="lyric-line" data-timestamp="15.85">我走向北 你去往南</p>
+                    
+                    <p class="lyric-line" data-timestamp="23.24">故事呀 一篇篇翻</p>
+                    
+                    <p class="lyric-line" data-timestamp="30.71">好烦 又加班到很晚</p>
+                    
+                    <p class="lyric-line" data-timestamp="33.32">你搭上空荡的</p>
+                    
+                    <p class="lyric-line" data-timestamp="35.04">地铁已是末班</p>
+                    
+                    <p class="lyric-line" data-timestamp="37.56">好烦 很爱却要分开</p>
+                    
+                    <p class="lyric-line" data-timestamp="40.19">恋爱谈不明白</p>
+                    
+                    <p class="lyric-line" data-timestamp="44.4">好烦 接近理想好难</p>
+                    
+                    <p class="lyric-line" data-timestamp="46.99">却又还很不甘</p>
+                    
+                    <p class="lyric-line" data-timestamp="48.71">如何拥抱平淡</p>
+                    
+                    <p class="lyric-line" data-timestamp="51.2">如果 最难得到圆满</p>
+                    
+                    <p class="lyric-line" data-timestamp="53.84">不如选择坦然</p>
+                    
+                    <p class="lyric-line" data-timestamp="57.3">若是月亮还没来</p>
+                    
+                    <p class="lyric-line" data-timestamp="60.67">路灯也可照窗台</p>
+                    
+                    <p class="lyric-line" data-timestamp="64.07">照着白色的山茶花微微开</p>
+                    
+                    <p class="lyric-line" data-timestamp="71.03">若是晨风还没来</p>
+                    
+                    <p class="lyric-line" data-timestamp="74.39">晚风也可吹入怀</p>
+                    
+                    <p class="lyric-line" data-timestamp="77.77">吹着那一地树影温柔摇摆</p>
+                    
+                    <p class="lyric-line" data-timestamp="85.1">你总以为你不够好</p>
+                    
+                    <p class="lyric-line" data-timestamp="86.89">不够苗条和美貌</p>
+                    
+                    <p class="lyric-line" data-timestamp="88.56">可是完美谁能达到</p>
+                    
+                    <p class="lyric-line" data-timestamp="90.31">做你自己就很好</p>
+                    
+                    <p class="lyric-line" data-timestamp="91.96000000000001">烦恼烦恼拥有太少</p>
+                    
+                    <p class="lyric-line" data-timestamp="93.69">没有房车没有钞票</p>
+                    
+                    <p class="lyric-line" data-timestamp="95.43">可爱你的人永远会</p>
+                    
+                    <p class="lyric-line" data-timestamp="97.18">把你当做心尖珍宝</p>
+                    
+                    <p class="lyric-line" data-timestamp="98.69">我也懂大多数的时候</p>
+                    
+                    <p class="lyric-line" data-timestamp="100.34">你只想逃离这世界</p>
+                    
+                    <p class="lyric-line" data-timestamp="102.14">我也懂太多的情绪在</p>
+                    
+                    <p class="lyric-line" data-timestamp="103.94">一个人失眠的深夜</p>
+                    
+                    <p class="lyric-line" data-timestamp="105.63">你可以是悲伤或者埋怨</p>
+                    
+                    <p class="lyric-line" data-timestamp="107.68">但请不要放弃明天</p>
+                    
+                    <p class="lyric-line" data-timestamp="109.34">这一直灰暗的世界</p>
+                    
+                    <p class="lyric-line" data-timestamp="110.99000000000001">我想看见你的笑脸</p>
+                    
+                    <p class="lyric-line" data-timestamp="112.38">若是月亮还没来</p>
+                    
+                    <p class="lyric-line" data-timestamp="115.53999999999999">路灯也可照窗台</p>
+                    
+                    <p class="lyric-line" data-timestamp="119.03">照着白色的山茶花微微开</p>
+                    
+                    <p class="lyric-line" data-timestamp="125.91">若是晨风还没来</p>
+                    
+                    <p class="lyric-line" data-timestamp="129.27">晚风也可吹入怀</p>
+                    
+                    <p class="lyric-line" data-timestamp="132.65">吹着那一地树影温柔摇摆</p>
+                    
+                    <p class="lyric-line" data-timestamp="139.63">若是月亮还没来</p>
+                    
+                    <p class="lyric-line" data-timestamp="143.1">路灯也可照窗台</p>
+                    
+                    <p class="lyric-line" data-timestamp="146.57999999999998">照着白色的山茶花微微开</p>
+                    
+                    <p class="lyric-line" data-timestamp="153.27">若是晨风还没来</p>
+                    
+                    <p class="lyric-line" data-timestamp="156.75">晚风也可吹入怀</p>
+                    
+                    <p class="lyric-line" data-timestamp="160.04">吹着那一地树影温柔摇摆</p>
+                    
+                </div>
+                <button id="download-button" class="border border-gray-300 p-2 mt-2" onclick="downloadSong('若月亮没来 (若是月亮还没来) - 王宇宙Leto,乔浚丞.mp3')">Download</button>
+                <input type="password" id="download-password" class="border border-gray-300 p-2 mt-2" placeholder="Enter password">
+            </div>
+        </div>
+        <div class="flex space-x-2 mt-4">
+            <a href="#" class="text-blue-500" onclick="shareTo('weibo', window.location.href); return false;">
+                <i class="fa-brands fa-weibo"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('twitter', window.location.href); return false;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-blue-500" onclick="shareTo('qq', window.location.href); return false;">
+                <i class="fa-brands fa-qq"></i>
+            </a>
+        </div>
+        <!-- Waline 评论区容器 -->
+        <div id="waline" class="mt-4"></div>
+    </main>
+    <script>
+        const audio = document.querySelector('audio');
+        const lyricsContainer = document.getElementById('lyrics-container');
+        const lyricLines = lyricsContainer.getElementsByClassName('lyric-line');
+        const languageSelect = document.getElementById('language-select');
+        const themeToggle = document.getElementById('theme-toggle');
+        const downloadButton = document.getElementById('download-button');
+        const downloadPassword = document.getElementById('download-password');
+
+        audio.addEventListener('timeupdate', function () {
+            const currentTime = this.currentTime;
+            for (let i = 0; i < lyricLines.length; i++) {
+                const line = lyricLines[i];
+                const timestamp = parseFloat(line.dataset.timestamp);
+                if (i === lyricLines.length - 1) {
+                    if (currentTime >= timestamp) {
+                        setHighlight(line);
+                    }
+                } else {
+                    const nextLine = lyricLines[i + 1];
+                    const nextTimestamp = parseFloat(nextLine.dataset.timestamp);
+                    if (currentTime >= timestamp && currentTime < nextTimestamp) {
+                        setHighlight(line);
+                        break;
+                    }
+                }
+            }
+        });
+
+        function setHighlight(line) {
+            for (let i = 0; i < lyricLines.length; i++) {
+                lyricLines[i].classList.remove('highlight');
+            }
+            line.classList.add('highlight');
+            line.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        for (let i = 0; i < lyricLines.length; i++) {
+            const line = lyricLines[i];
+            line.addEventListener('click', function () {
+                const timestamp = parseFloat(this.dataset.timestamp);
+                audio.currentTime = timestamp;
+            });
+        }
+
+        languageSelect.addEventListener('change', function () {
+            const lang = this.value;
+            fetch(`language/${lang}.json`)
+              .then(response => response.json())
+              .then(data => {
+                    // 简单示例，替换标题
+                    document.title = `${data.song_title_prefix} ${'若月亮没来 - 王宇宙Leto/乔浚丞'}`;
+                    downloadButton.textContent = data.download_button_text;
+                    downloadPassword.placeholder = data.download_password_placeholder;
+                });
+        });
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                this.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        function shareTo(platform, url) {
+            let shareUrl;
+            switch (platform) {
+                case 'weibo':
+                    shareUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+                    break;
+                case 'qq':
+                    shareUrl = `http://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            window.open(shareUrl, '_blank');
+        }
+
+        function downloadSong(mp3Url) {
+            const password = downloadPassword.value;
+            if (password === '123456') {
+                const a = document.createElement('a');
+                a.href = mp3Url;
+                a.download = mp3Url;
+                a.click();
+            } else {
+                alert('Incorrect password');
+            }
+        }
+
+        // Waline 配置
+        Waline.init({
+            el: '#waline',
+            serverURL: 'https://walineycyyq.netlify.app/'
+        });
+    </script>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+</body>
+</html>    
